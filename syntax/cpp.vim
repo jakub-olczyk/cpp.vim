@@ -1,98 +1,853 @@
+
 " Vim syntax file
 " Language:	C++
-" Author: Dieter Hartmann
+" Author: Jakub Olczyk
+" Date: 2015/01/13
 " License: GPL
-"
+" Based upon vim syntax file of  Dieter Hartmann
 " $Id: cpp.vim,v 1.2 2003/04/04 14:28:01 dihar Exp $
 "
 " -- Qt classes
-"
-"
-syn keyword qClass QAccel QDict QIconFactory QPicture QSyntaxHighlighter
-syn keyword qClass QAccessible QDictIterator QIconSet QPixmap Qt
-syn keyword qClass QAccessibleInterface QDir QIconView QPixmapCache QTab
-syn keyword qClass QAccessibleObject QDirectPainter QIconViewItem QPlatinumStyle QTabBar
-syn keyword qClass QAction QDns QImage QPNGImagePacker QTabDialog
-syn keyword qClass QActionGroup QDockArea QImageConsumer QPoint QTable
-syn keyword qClass QApplication QDockWindow QImageDecoder QPointArray QTableItem
-syn keyword qClass QAquaStyle QDomAttr QImageDrag QPopupMenu QTableSelection
-syn keyword qClass QAsciiCache QDomCDATASection QImageFormat QPrinter QTabletEvent
-syn keyword qClass QAsciiCacheIterator QDomCharacterData QImageFormatPlugin QProcess QTabWidget
-syn keyword qClass QAsciiDict QDomComment QImageFormatType QProgressBar QTextBrowser
-syn keyword qClass QAsciiDictIterator QDomDocument QImageIO QProgressDialog QTextCodec
-syn keyword qClass QAssistantClient QDomDocumentFragment QIMEvent QPtrCollection QTextCodecPlugin
-syn keyword qClass QAxAggregated  QDomDocumentType QInputDialog QPtrDict QTextDecoder
-syn keyword qClass QAxBase  QDomElement QIntCache QPtrDictIterator QTextDrag
-syn keyword qClass QAxBindable  QDomEntity QIntCacheIterator QPtrList QTextEdit
-syn keyword qClass QAxFactory  QDomEntityReference QIntDict QPtrListIterator QTextEncoder
-syn keyword qClass QAxObject  QDomImplementation QIntDictIterator QPtrQueue QTextIStream
-syn keyword qClass QAxWidget  QDomNamedNodeMap QIntValidator QPtrStack QTextOStream
-syn keyword qClass QBig5Codec QDomNode QIODevice QPtrVector QTextStream
-syn keyword qClass QBig5hkscsCodec QDomNodeList QJisCodec QPushButton QThread
-syn keyword qClass QBitArray QDomNotation QKbdDriverFactory QRadioButton QTime
-syn keyword qClass QBitmap QDomProcessingInstruction QKbdDriverPlugin QRangeControl QTimeEdit
-syn keyword qClass QBitVal QDomText QKeyEvent QRect QTimer
-syn keyword qClass QBoxLayout QDoubleValidator QKeySequence QRegExp QTimerEvent
-syn keyword qClass QBrush QDragEnterEvent QLabel QRegExpValidator QToolBar
-syn keyword qClass QBuffer QDragLeaveEvent QLayout QRegion QToolButton
-syn keyword qClass QButton QDragMoveEvent QLayoutItem QResizeEvent QToolTip
-syn keyword qClass QButtonGroup QDragObject QLayoutIterator QScreen QToolTipGroup
-syn keyword qClass QByteArray QDropEvent QLCDNumber QScrollBar QTranslator
-syn keyword qClass QCache QEditorFactory QLibrary QScrollView QTranslatorMessage
-syn keyword qClass QCacheIterator QErrorMessage QLineEdit QSemaphore QTsciiCodec
-syn keyword qClass QCanvas QEucJpCodec QListBox QServerSocket QUriDrag
-syn keyword qClass QCanvasEllipse QEucKrCodec QListBoxItem QSessionManager QUrl
-syn keyword qClass QCanvasItem QEvent QListBoxPixmap QSettings QUrlInfo
-syn keyword qClass QCanvasItemList QEventLoop QListBoxText QSGIStyle QUrlOperator
-syn keyword qClass QCanvasLine QFile QListView QShowEvent QValidator
-syn keyword qClass QCanvasPixmap QFileDialog QListViewItem QSignal QValueList
-syn keyword qClass QCanvasPixmapArray QFileIconProvider QListViewItemIterator QSignalMapper QValueListConstIterator
-syn keyword qClass QCanvasPolygon QFileInfo QLocalFs QSimpleRichText QValueListIterator
-syn keyword qClass QCanvasPolygonalItem QFilePreview QMacStyle QSize QValueStack
-syn keyword qClass QCanvasRectangle QFocusData QMainWindow QSizeGrip QValueVector
-syn keyword qClass QCanvasSpline QFocusEvent QMap QSizePolicy QVariant
-syn keyword qClass QCanvasSprite QFont QMapConstIterator QSjisCodec QVBox
-syn keyword qClass QCanvasText QFontDatabase QMapIterator QSlider QVBoxLayout
-syn keyword qClass QCanvasView QFontDialog QMemArray QSocket QVButtonGroup
-syn keyword qClass QCDEStyle QFontInfo QMenuBar QSocketDevice QVGroupBox
-syn keyword qClass QChar QFontManager QMenuData QSocketNotifier QWaitCondition
-syn keyword qClass QCharRef QFontMetrics QMessageBox QSound QWhatsThis
-syn keyword qClass QCheckBox QFrame QMetaObject QSpacerItem QWheelEvent
-syn keyword qClass QCheckListItem QFtp QMetaProperty QSpinBox QWidget
-syn keyword qClass QCheckTableItem QGb18030Codec QMimeSource QSplitter QWidgetFactory
-syn keyword qClass QChildEvent QGb2312Codec QMimeSourceFactory QSql QWidgetItem
-syn keyword qClass QClipboard QGbkCodec QMotif  QSqlCursor QWidgetPlugin
-syn keyword qClass QCloseEvent QGfxDriverFactory QMotifDialog  QSqlDatabase QWidgetStack
-syn keyword qClass QColor QGfxDriverPlugin QMotifPlusStyle QSqlDriver QWindowsMime
-syn keyword qClass QColorDialog QGL QMotifStyle QSqlDriverPlugin QWindowsStyle
-syn keyword qClass QColorDrag QGLayoutIterator QMotifWidget  QSqlEditorFactory QWizard
-syn keyword qClass QColorGroup QGLColormap QMouseDriverFactory QSqlError QWMatrix
-syn keyword qClass QComboBox QGLContext QMouseDriverPlugin QSqlField QWorkspace
-syn keyword qClass QComboTableItem QGLFormat QMouseEvent QSqlFieldInfo QWSDecoration
-syn keyword qClass QCommonStyle QGLWidget QMoveEvent QSqlForm QWSInputMethod
-syn keyword qClass QConstString QGrid QMovie QSqlIndex QWSKeyboardHandler
-syn keyword qClass QContextMenuEvent QGridLayout QMutex QSqlPropertyMap QWSMouseHandler
-syn keyword qClass QCopChannel QGridView QMutexLocker QSqlQuery QWSServer
-syn keyword qClass QCString QGroupBox QNetworkOperation QSqlRecord QWSWindow
-syn keyword qClass QCursor QGuardedPtr QNetworkProtocol QSqlRecordInfo QXmlAttributes
-syn keyword qClass QCustomEvent QHBox QNPInstance  QSqlResult QXmlContentHandler
-syn keyword qClass QCustomMenuItem QHBoxLayout QNPlugin  QStatusBar QXmlDeclHandler
-syn keyword qClass QDataBrowser QHButtonGroup QNPStream  QStoredDrag QXmlDefaultHandler
-syn keyword qClass QDataStream QHeader QNPWidget  QStrIList QXmlDTDHandler
-syn keyword qClass QDataTable QHebrewCodec QObject QString QXmlEntityResolver
-syn keyword qClass QDataView QHGroupBox QObjectCleanupHandler QStringList QXmlErrorHandler
-syn keyword qClass QDate QHideEvent QObjectList QStrList QXmlInputSource
-syn keyword qClass QDateEdit QHostAddress QPaintDevice QStrListIterator QXmlLexicalHandler
-syn keyword qClass QDateTime QHttp QPaintDeviceMetrics QStyle QXmlLocator
-syn keyword qClass QDateTimeEdit QHttpHeader QPainter QStyleFactory QXmlNamespaceSupport
-syn keyword qClass QDeepCopy QHttpRequestHeader QPaintEvent QStyleOption QXmlParseException
-syn keyword qClass QDesktopWidget QHttpResponseHeader QPair QStylePlugin QXmlReader
-syn keyword qClass QDial QIconDrag QPalette QStyleSheet QXmlSimpleReader
-syn keyword qClass QDialog QIconDragItem QPen QStyleSheetItem QXtWidget 
+syn keyword qClass QAbstractAnimation
+syn keyword qClass QAbstractButton
+syn keyword qClass QAbstractEventDispatcher
+syn keyword qClass QAbstractExtensionFactory
+syn keyword qClass QAbstractExtensionManager
+syn keyword qClass QAbstractFileEngine
+syn keyword qClass QAbstractFileEngineHandler
+syn keyword qClass QAbstractFileEngineIterator
+syn keyword qClass QAbstractFontEngine
+syn keyword qClass QAbstractFormBuilder
+syn keyword qClass QAbstractGraphicsShapeItem
+syn keyword qClass QAbstractItemDelegate
+syn keyword qClass QAbstractItemModel
+syn keyword qClass QAbstractItemView
+syn keyword qClass QAbstractListModel
+syn keyword qClass QAbstractMessageHandler
+syn keyword qClass QAbstractNetworkCache
+syn keyword qClass QAbstractPrintDialog
+syn keyword qClass QAbstractProxyModel
+syn keyword qClass QAbstractScrollArea
+syn keyword qClass QAbstractSlider
+syn keyword qClass QAbstractSocket
+syn keyword qClass QAbstractSpinBox
+syn keyword qClass QAbstractState
+syn keyword qClass QAbstractTableModel
+syn keyword qClass QAbstractTextDocumentLayout
+syn keyword qClass QAbstractTransition
+syn keyword qClass QAbstractUriResolver
+syn keyword qClass QAbstractVideoBuffer
+syn keyword qClass QAbstractVideoSurface
+syn keyword qClass QAbstractXmlNodeModel
+syn keyword qClass QAbstractXmlReceiver
+syn keyword qClass QAccessible
+syn keyword qClass QAccessibleBridge
+syn keyword qClass QAccessibleBridgePlugin
+syn keyword qClass QAccessibleEvent
+syn keyword qClass QAccessibleInterface
+syn keyword qClass QAccessibleObject
+syn keyword qClass QAccessiblePlugin
+syn keyword qClass QAccessibleWidget
+syn keyword qClass QAction
+syn keyword qClass QActionEvent
+syn keyword qClass QActionGroup
+syn keyword qClass QAnimationGroup
+syn keyword qClass QApplication
+syn keyword qClass QAtomicInt
+syn keyword qClass QAtomicPointer
+syn keyword qClass AudioDataOutput (Phonon)
+syn keyword qClass QAudioDeviceInfo
+syn keyword qClass QAudioFormat
+syn keyword qClass QAudioInput
+syn keyword qClass QAudioOutput
+syn keyword qClass QAuthenticator
+syn keyword qClass QAxAggregated
+syn keyword qClass QAxBase
+syn keyword qClass QAxBindable
+syn keyword qClass QAxFactory
+syn keyword qClass QAxObject
+syn keyword qClass QAxScript
+syn keyword qClass QAxScriptEngine
+syn keyword qClass QAxScriptManager
+syn keyword qClass QAxWidget
+syn keyword qClass QBasicTimer
+syn keyword qClass QBitArray
+syn keyword qClass QBitmap
+syn keyword qClass QBoxLayout
+syn keyword qClass QBrush
+syn keyword qClass QBuffer
+syn keyword qClass QButtonGroup
+syn keyword qClass QByteArray
+syn keyword qClass QByteArrayMatcher
+syn keyword qClass QCache
+syn keyword qClass QCalendarWidget
+syn keyword qClass QCDEStyle
+syn keyword qClass QChar
+syn keyword qClass QCheckBox
+syn keyword qClass QChildEvent
+syn keyword qClass QCleanlooksStyle
+syn keyword qClass QClipboard
+syn keyword qClass QCloseEvent
+syn keyword qClass QColor
+syn keyword qClass QColorDialog
+syn keyword qClass QColormap
+syn keyword qClass QColumnView
+syn keyword qClass QComboBox
+syn keyword qClass QCommandLinkButton
+syn keyword qClass QCommonStyle
+syn keyword qClass QCompleter
+syn keyword qClass QConicalGradient
+syn keyword qClass QContextMenuEvent
+syn keyword qClass QContiguousCache
+syn keyword qClass QCopChannel
+syn keyword qClass QCoreApplication
+syn keyword qClass QCryptographicHash
+syn keyword qClass QCursor
+syn keyword qClass QCustomRasterPaintDevice
+syn keyword qClass QDataStream
+syn keyword qClass QDataWidgetMapper
+syn keyword qClass QDate
+syn keyword qClass QDateEdit
+syn keyword qClass QDateTime
+syn keyword qClass QDateTimeEdit
+syn keyword qClass QDBusAbstractAdaptor
+syn keyword qClass QDBusAbstractInterface
+syn keyword qClass QDBusArgument
+syn keyword qClass QDBusConnection
+syn keyword qClass QDBusConnectionInterface
+syn keyword qClass QDBusContext
+syn keyword qClass QDBusError
+syn keyword qClass QDBusInterface
+syn keyword qClass QDBusMessage
+syn keyword qClass QDBusObjectPath
+syn keyword qClass QDBusPendingCall
+syn keyword qClass QDBusPendingCallWatcher
+syn keyword qClass QDBusPendingReply
+syn keyword qClass QDBusReply
+syn keyword qClass QDBusServiceWatcher
+syn keyword qClass QDBusSignature
+syn keyword qClass QDBusUnixFileDescriptor
+syn keyword qClass QDBusVariant
+syn keyword qClass QDebug
+syn keyword qClass QDeclarativeComponent
+syn keyword qClass QDeclarativeContext
+syn keyword qClass QDeclarativeEngine
+syn keyword qClass QDeclarativeError
+syn keyword qClass QDeclarativeExpression
+syn keyword qClass QDeclarativeExtensionPlugin
+syn keyword qClass QDeclarativeImageProvider
+syn keyword qClass QDeclarativeItem
+syn keyword qClass QDeclarativeListProperty
+syn keyword qClass QDeclarativeListReference
+syn keyword qClass QDeclarativeNetworkAccessManagerFactory
+syn keyword qClass QDeclarativeParserStatus
+syn keyword qClass QDeclarativeProperty
+syn keyword qClass QDeclarativePropertyMap
+syn keyword qClass QDeclarativePropertyValueSource
+syn keyword qClass QDeclarativeScriptString
+syn keyword qClass QDeclarativeView
+syn keyword qClass QDecoration
+syn keyword qClass QDecorationDefault
+syn keyword qClass QDecorationFactory
+syn keyword qClass QDecorationPlugin
+syn keyword qClass QDesignerActionEditorInterface
+syn keyword qClass QDesignerContainerExtension
+syn keyword qClass QDesignerCustomWidgetCollectionInterface
+syn keyword qClass QDesignerCustomWidgetInterface
+syn keyword qClass QDesignerDynamicPropertySheetExtension
+syn keyword qClass QDesignerFormEditorInterface
+syn keyword qClass QDesignerFormWindowCursorInterface
+syn keyword qClass QDesignerFormWindowInterface
+syn keyword qClass QDesignerFormWindowManagerInterface
+syn keyword qClass QDesignerMemberSheetExtension
+syn keyword qClass QDesignerObjectInspectorInterface
+syn keyword qClass QDesignerPropertyEditorInterface
+syn keyword qClass QDesignerPropertySheetExtension
+syn keyword qClass QDesignerTaskMenuExtension
+syn keyword qClass QDesignerWidgetBoxInterface
+syn keyword qClass QDesktopServices
+syn keyword qClass QDesktopWidget
+syn keyword qClass QDial
+syn keyword qClass QDialog
+syn keyword qClass QDialogButtonBox
+syn keyword qClass QDir
+syn keyword qClass QDirectPainter
+syn keyword qClass QDirIterator
+syn keyword qClass QDockWidget
+syn keyword qClass QDomAttr
+syn keyword qClass QDomCDATASection
+syn keyword qClass QDomCharacterData
+syn keyword qClass QDomComment
+syn keyword qClass QDomDocument
+syn keyword qClass QDomDocumentFragment
+syn keyword qClass QDomDocumentType
+syn keyword qClass QDomElement
+syn keyword qClass QDomEntity
+syn keyword qClass QDomEntityReference
+syn keyword qClass QDomImplementation
+syn keyword qClass QDomNamedNodeMap
+syn keyword qClass QDomNode
+syn keyword qClass QDomNodeList
+syn keyword qClass QDomNotation
+syn keyword qClass QDomProcessingInstruction
+syn keyword qClass QDomText
+syn keyword qClass QDoubleSpinBox
+syn keyword qClass QDoubleValidator
+syn keyword qClass QDrag
+syn keyword qClass QDragEnterEvent
+syn keyword qClass QDragLeaveEvent
+syn keyword qClass QDragMoveEvent
+syn keyword qClass QDropEvent
+syn keyword qClass QDynamicPropertyChangeEvent
+syn keyword qClass QEasingCurve
+syn keyword qClass Effect (Phonon)
+syn keyword qClass EffectParameter (Phonon)
+syn keyword qClass EffectWidget (Phonon)
+syn keyword qClass QElapsedTimer
+syn keyword qClass QErrorMessage
+syn keyword qClass QEvent
+syn keyword qClass QEventLoop
+syn keyword qClass QEventTransition
+syn keyword qClass Exception (QtConcurrent)
+syn keyword qClass QExplicitlySharedDataPointer
+syn keyword qClass QExtensionFactory
+syn keyword qClass QExtensionManager
+syn keyword qClass QFile
+syn keyword qClass QFileDialog
+syn keyword qClass QFileIconProvider
+syn keyword qClass QFileInfo
+syn keyword qClass QFileOpenEvent
+syn keyword qClass QFileSystemModel
+syn keyword qClass QFileSystemWatcher
+syn keyword qClass QFinalState
+syn keyword qClass QFlag
+syn keyword qClass QFlags
+syn keyword qClass QFocusEvent
+syn keyword qClass QFocusFrame
+syn keyword qClass QFont
+syn keyword qClass QFontComboBox
+syn keyword qClass QFontDatabase
+syn keyword qClass QFontDialog
+syn keyword qClass QFontEngineInfo
+syn keyword qClass QFontEnginePlugin
+syn keyword qClass QFontInfo
+syn keyword qClass QFontMetrics
+syn keyword qClass QFontMetricsF
+syn keyword qClass QFormBuilder
+syn keyword qClass QFormLayout
+syn keyword qClass QFrame
+syn keyword qClass QFSFileEngine
+syn keyword qClass QFtp
+syn keyword qClass QFuture
+syn keyword qClass QFutureIterator
+syn keyword qClass QFutureSynchronizer
+syn keyword qClass QFutureWatcher
+syn keyword qClass QGenericArgument
+syn keyword qClass QGenericMatrix
+syn keyword qClass QGenericPlugin
+syn keyword qClass QGenericPluginFactory
+syn keyword qClass QGenericReturnArgument
+syn keyword qClass QGesture
+syn keyword qClass QGestureEvent
+syn keyword qClass QGestureRecognizer
+syn keyword qClass QGLBuffer
+syn keyword qClass QGLColormap
+syn keyword qClass QGLContext
+syn keyword qClass QGLFormat
+syn keyword qClass QGLFramebufferObject
+syn keyword qClass QGLFramebufferObjectFormat
+syn keyword qClass QGLFunctions
+syn keyword qClass QGLPixelBuffer
+syn keyword qClass QGLShader
+syn keyword qClass QGLShaderProgram
+syn keyword qClass QGLWidget
+syn keyword qClass QGlyphRun
+syn keyword qClass QGradient
+syn keyword qClass QGraphicsAnchor
+syn keyword qClass QGraphicsAnchorLayout
+syn keyword qClass QGraphicsBlurEffect
+syn keyword qClass QGraphicsColorizeEffect
+syn keyword qClass QGraphicsDropShadowEffect
+syn keyword qClass QGraphicsEffect
+syn keyword qClass QGraphicsEllipseItem
+syn keyword qClass QGraphicsGridLayout
+syn keyword qClass QGraphicsItem
+syn keyword qClass QGraphicsItemAnimation
+syn keyword qClass QGraphicsItemGroup
+syn keyword qClass QGraphicsLayout
+syn keyword qClass QGraphicsLayoutItem
+syn keyword qClass QGraphicsLinearLayout
+syn keyword qClass QGraphicsLineItem
+syn keyword qClass QGraphicsObject
+syn keyword qClass QGraphicsOpacityEffect
+syn keyword qClass QGraphicsPathItem
+syn keyword qClass QGraphicsPixmapItem
+syn keyword qClass QGraphicsPolygonItem
+syn keyword qClass QGraphicsProxyWidget
+syn keyword qClass QGraphicsRectItem
+syn keyword qClass QGraphicsRotation
+syn keyword qClass QGraphicsScale
+syn keyword qClass QGraphicsScene
+syn keyword qClass QGraphicsSceneContextMenuEvent
+syn keyword qClass QGraphicsSceneDragDropEvent
+syn keyword qClass QGraphicsSceneEvent
+syn keyword qClass QGraphicsSceneHelpEvent
+syn keyword qClass QGraphicsSceneHoverEvent
+syn keyword qClass QGraphicsSceneMouseEvent
+syn keyword qClass QGraphicsSceneMoveEvent
+syn keyword qClass QGraphicsSceneResizeEvent
+syn keyword qClass QGraphicsSceneWheelEvent
+syn keyword qClass QGraphicsSimpleTextItem
+syn keyword qClass QGraphicsSvgItem
+syn keyword qClass QGraphicsTextItem
+syn keyword qClass QGraphicsTransform
+syn keyword qClass QGraphicsView
+syn keyword qClass QGraphicsWebView
+syn keyword qClass QGraphicsWidget
+syn keyword qClass QGridLayout
+syn keyword qClass QGroupBox
+syn keyword qClass QGtkStyle
+syn keyword qClass QHash
+syn keyword qClass QHashIterator
+syn keyword qClass QHBoxLayout
+syn keyword qClass QHeaderView
+syn keyword qClass QHelpContentItem
+syn keyword qClass QHelpContentModel
+syn keyword qClass QHelpContentWidget
+syn keyword qClass QHelpEngine
+syn keyword qClass QHelpEngineCore
+syn keyword qClass QHelpEvent
+syn keyword qClass QHelpIndexModel
+syn keyword qClass QHelpIndexWidget
+syn keyword qClass QHelpSearchEngine
+syn keyword qClass QHelpSearchQuery
+syn keyword qClass QHelpSearchQueryWidget
+syn keyword qClass QHelpSearchResultWidget
+syn keyword qClass QHideEvent
+syn keyword qClass QHistoryState
+syn keyword qClass QHostAddress
+syn keyword qClass QHostInfo
+syn keyword qClass QHoverEvent
+syn keyword qClass QHttpMultiPart
+syn keyword qClass QHttpPart
+syn keyword qClass QIcon
+syn keyword qClass QIconDragEvent
+syn keyword qClass QIconEngine
+syn keyword qClass QIconEnginePlugin
+syn keyword qClass QIconEnginePluginV2
+syn keyword qClass QIconEngineV2
+syn keyword qClass QIdentityProxyModel
+syn keyword qClass QImage
+syn keyword qClass QImageIOHandler
+syn keyword qClass QImageIOPlugin
+syn keyword qClass QImageReader
+syn keyword qClass QImageWriter
+syn keyword qClass QInputContext
+syn keyword qClass QInputContextFactory
+syn keyword qClass QInputContextPlugin
+syn keyword qClass QInputDialog
+syn keyword qClass QInputEvent
+syn keyword qClass QInputMethodEvent
+syn keyword qClass QIntValidator
+syn keyword qClass QIODevice
+syn keyword qClass QItemDelegate
+syn keyword qClass QItemEditorCreator
+syn keyword qClass QItemEditorCreatorBase
+syn keyword qClass QItemEditorFactory
+syn keyword qClass QItemSelection
+syn keyword qClass QItemSelectionModel
+syn keyword qClass QItemSelectionRange
+syn keyword qClass QKbdDriverFactory
+syn keyword qClass QKbdDriverPlugin
+syn keyword qClass QKeyEvent
+syn keyword qClass QKeyEventTransition
+syn keyword qClass QKeySequence
+syn keyword qClass QLabel
+syn keyword qClass QLatin1Char
+syn keyword qClass QLatin1String
+syn keyword qClass QLayout
+syn keyword qClass QLayoutItem
+syn keyword qClass QLCDNumber
+syn keyword qClass QLibrary
+syn keyword qClass QLibraryInfo
+syn keyword qClass QLine
+syn keyword qClass QLinearGradient
+syn keyword qClass QLineEdit
+syn keyword qClass QLineF
+syn keyword qClass QLinkedList
+syn keyword qClass QLinkedListIterator
+syn keyword qClass QList
+syn keyword qClass QListIterator
+syn keyword qClass QListView
+syn keyword qClass QListWidget
+syn keyword qClass QListWidgetItem
+syn keyword qClass QLocale
+syn keyword qClass QLocalServer
+syn keyword qClass QLocalSocket
+syn keyword qClass QMacCocoaViewContainer
+syn keyword qClass QMacNativeWidget
+syn keyword qClass QMacPasteboardMime
+syn keyword qClass QMacStyle
+syn keyword qClass QMainWindow
+syn keyword qClass QMap
+syn keyword qClass QMapIterator
+syn keyword qClass QMargins
+syn keyword qClass QMatrix4x4
+syn keyword qClass QMdiArea
+syn keyword qClass QMdiSubWindow
+syn keyword qClass MediaController (Phonon)
+syn keyword qClass MediaNode (Phonon)
+syn keyword qClass MediaObject (Phonon)
+syn keyword qClass MediaSource (Phonon)
+syn keyword qClass QMenu
+syn keyword qClass QMenuBar
+syn keyword qClass QMessageBox
+syn keyword qClass QMetaClassInfo
+syn keyword qClass QMetaEnum
+syn keyword qClass QMetaMethod
+syn keyword qClass QMetaObject
+syn keyword qClass QMetaProperty
+syn keyword qClass QMetaType
+syn keyword qClass QMimeData
+syn keyword qClass QModelIndex
+syn keyword qClass QMotifStyle
+syn keyword qClass QMouseDriverFactory
+syn keyword qClass QMouseDriverPlugin
+syn keyword qClass QMouseEvent
+syn keyword qClass QMouseEventTransition
+syn keyword qClass QMoveEvent
+syn keyword qClass QMovie
+syn keyword qClass QMultiHash
+syn keyword qClass QMultiMap
+syn keyword qClass QMutableHashIterator
+syn keyword qClass QMutableLinkedListIterator
+syn keyword qClass QMutableListIterator
+syn keyword qClass QMutableMapIterator
+syn keyword qClass QMutableSetIterator
+syn keyword qClass QMutableVectorIterator
+syn keyword qClass QMutex
+syn keyword qClass QMutexLocker
+syn keyword qClass QNetworkAccessManager
+syn keyword qClass QNetworkAddressEntry
+syn keyword qClass QNetworkCacheMetaData
+syn keyword qClass QNetworkConfiguration
+syn keyword qClass QNetworkConfigurationManager
+syn keyword qClass QNetworkCookie
+syn keyword qClass QNetworkCookieJar
+syn keyword qClass QNetworkDiskCache
+syn keyword qClass QNetworkInterface
+syn keyword qClass QNetworkProxy
+syn keyword qClass QNetworkProxyFactory
+syn keyword qClass QNetworkProxyQuery
+syn keyword qClass QNetworkReply
+syn keyword qClass QNetworkRequest
+syn keyword qClass QNetworkSession
+syn keyword qClass Notifier (Phonon::BackendCapabilities)
+syn keyword qClass QObject
+syn keyword qClass QObjectCleanupHandler
+syn keyword qClass ObjectDescription (Phonon)
+syn keyword qClass QPageSetupDialog
+syn keyword qClass QPaintDevice
+syn keyword qClass QPaintEngine
+syn keyword qClass QPaintEngineState
+syn keyword qClass QPainter
+syn keyword qClass QPainterPath
+syn keyword qClass QPainterPathStroker
+syn keyword qClass QPaintEvent
+syn keyword qClass QPair
+syn keyword qClass QPalette
+syn keyword qClass QPanGesture
+syn keyword qClass QParallelAnimationGroup
+syn keyword qClass Path (Phonon)
+syn keyword qClass QPauseAnimation
+syn keyword qClass QPen
+syn keyword qClass QPersistentModelIndex
+syn keyword qClass QPicture
+syn keyword qClass QPinchGesture
+syn keyword qClass QPixmap
+syn keyword qClass QPixmapCache
+syn keyword qClass QPlainTextDocumentLayout
+syn keyword qClass QPlainTextEdit
+syn keyword qClass QPlastiqueStyle
+syn keyword qClass QPlatformCursor
+syn keyword qClass QPlatformCursorImage
+syn keyword qClass QPlatformFontDatabase
+syn keyword qClass QPlatformWindowFormat
+syn keyword qClass QPluginLoader
+syn keyword qClass QPoint
+syn keyword qClass QPointer
+syn keyword qClass QPointF
+syn keyword qClass QPolygon
+syn keyword qClass QPolygonF
+syn keyword qClass QPrintDialog
+syn keyword qClass QPrintEngine
+syn keyword qClass QPrinter
+syn keyword qClass QPrinterInfo
+syn keyword qClass QPrintPreviewDialog
+syn keyword qClass QPrintPreviewWidget
+syn keyword qClass QProcess
+syn keyword qClass QProcessEnvironment
+syn keyword qClass QProgressBar
+syn keyword qClass QProgressDialog
+syn keyword qClass QPropertyAnimation
+syn keyword qClass QProxyScreen
+syn keyword qClass QProxyScreenCursor
+syn keyword qClass QProxyStyle
+syn keyword qClass QPushButton
+syn keyword qClass QTouchEventSequence (QTest)
+syn keyword qClass QQuaternion
+syn keyword qClass QQueue
+syn keyword qClass QRadialGradient
+syn keyword qClass QRadioButton
+syn keyword qClass QRasterPaintEngine
+syn keyword qClass QRawFont
+syn keyword qClass QReadLocker
+syn keyword qClass QReadWriteLock
+syn keyword qClass QRect
+syn keyword qClass QRectF
+syn keyword qClass QRegExp
+syn keyword qClass QRegExpValidator
+syn keyword qClass QRegion
+syn keyword qClass QResizeEvent
+syn keyword qClass QResource
+syn keyword qClass QRubberBand
+syn keyword qClass QRunnable
+syn keyword qClass QS60MainApplication
+syn keyword qClass QS60MainAppUi
+syn keyword qClass QS60MainDocument
+syn keyword qClass QS60Style
+syn keyword qClass QScopedArrayPointer
+syn keyword qClass QScopedPointer
+syn keyword qClass QScopedValueRollback
+syn keyword qClass QScreen
+syn keyword qClass QScreenCursor
+syn keyword qClass QScreenDriverFactory
+syn keyword qClass QScreenDriverPlugin
+syn keyword qClass QScriptable
+syn keyword qClass QScriptClass
+syn keyword qClass QScriptClassPropertyIterator
+syn keyword qClass QScriptContext
+syn keyword qClass QScriptContextInfo
+syn keyword qClass QScriptEngine
+syn keyword qClass QScriptEngineAgent
+syn keyword qClass QScriptEngineDebugger
+syn keyword qClass QScriptExtensionPlugin
+syn keyword qClass QScriptProgram
+syn keyword qClass QScriptString
+syn keyword qClass QScriptSyntaxCheckResult
+syn keyword qClass QScriptValue
+syn keyword qClass QScriptValueIterator
+syn keyword qClass QScrollArea
+syn keyword qClass QScrollBar
+syn keyword qClass SeekSlider (Phonon)
+syn keyword qClass QSemaphore
+syn keyword qClass QSequentialAnimationGroup
+syn keyword qClass QSessionManager
+syn keyword qClass QSet
+syn keyword qClass QSetIterator
+syn keyword qClass QSettings
+syn keyword qClass QSharedData
+syn keyword qClass QSharedDataPointer
+syn keyword qClass QSharedMemory
+syn keyword qClass QSharedPointer
+syn keyword qClass QShortcut
+syn keyword qClass QShortcutEvent
+syn keyword qClass QShowEvent
+syn keyword qClass QSignalMapper
+syn keyword qClass QSignalSpy
+syn keyword qClass QSignalTransition
+syn keyword qClass QSimpleXmlNodeModel
+syn keyword qClass QSize
+syn keyword qClass QSizeF
+syn keyword qClass QSizeGrip
+syn keyword qClass QSizePolicy
+syn keyword qClass QSlider
+syn keyword qClass QSocketNotifier
+syn keyword qClass QSortFilterProxyModel
+syn keyword qClass QSound
+syn keyword qClass QSourceLocation
+syn keyword qClass QSpacerItem
+syn keyword qClass QSpinBox
+syn keyword qClass QSplashScreen
+syn keyword qClass QSplitter
+syn keyword qClass QSplitterHandle
+syn keyword qClass QSqlDatabase
+syn keyword qClass QSqlDriver
+syn keyword qClass QSqlDriverCreator
+syn keyword qClass QSqlDriverCreatorBase
+syn keyword qClass QSqlDriverPlugin
+syn keyword qClass QSqlError
+syn keyword qClass QSqlField
+syn keyword qClass QSqlIndex
+syn keyword qClass QSqlQuery
+syn keyword qClass QSqlQueryModel
+syn keyword qClass QSqlRecord
+syn keyword qClass QSqlRelation
+syn keyword qClass QSqlRelationalDelegate
+syn keyword qClass QSqlRelationalTableModel
+syn keyword qClass QSqlResult
+syn keyword qClass QSqlTableModel
+syn keyword qClass QSslCertificate
+syn keyword qClass QSslCipher
+syn keyword qClass QSslConfiguration
+syn keyword qClass QSslError
+syn keyword qClass QSslKey
+syn keyword qClass QSslSocket
+syn keyword qClass QStack
+syn keyword qClass QStackedLayout
+syn keyword qClass QStackedWidget
+syn keyword qClass QStandardItem
+syn keyword qClass QStandardItemEditorCreator
+syn keyword qClass QStandardItemModel
+syn keyword qClass QState
+syn keyword qClass QStateMachine
+syn keyword qClass QStaticText
+syn keyword qClass QStatusBar
+syn keyword qClass QStatusTipEvent
+syn keyword qClass QString
+syn keyword qClass QStringList
+syn keyword qClass QStringListModel
+syn keyword qClass QStringMatcher
+syn keyword qClass QStringRef
+syn keyword qClass QStyle
+syn keyword qClass QStyledItemDelegate
+syn keyword qClass QStyleFactory
+syn keyword qClass QStyleHintReturn
+syn keyword qClass QStyleHintReturnMask
+syn keyword qClass QStyleHintReturnVariant
+syn keyword qClass QStyleOption
+syn keyword qClass QStyleOptionButton
+syn keyword qClass QStyleOptionComboBox
+syn keyword qClass QStyleOptionComplex
+syn keyword qClass QStyleOptionDockWidget
+syn keyword qClass QStyleOptionFocusRect
+syn keyword qClass QStyleOptionFrame
+syn keyword qClass QStyleOptionFrameV2
+syn keyword qClass QStyleOptionFrameV3
+syn keyword qClass QStyleOptionGraphicsItem
+syn keyword qClass QStyleOptionGroupBox
+syn keyword qClass QStyleOptionHeader
+syn keyword qClass QStyleOptionMenuItem
+syn keyword qClass QStyleOptionProgressBar
+syn keyword qClass QStyleOptionProgressBarV2
+syn keyword qClass QStyleOptionQ3DockWindow
+syn keyword qClass QStyleOptionQ3ListView
+syn keyword qClass QStyleOptionQ3ListViewItem
+syn keyword qClass QStyleOptionRubberBand
+syn keyword qClass QStyleOptionSizeGrip
+syn keyword qClass QStyleOptionSlider
+syn keyword qClass QStyleOptionSpinBox
+syn keyword qClass QStyleOptionTab
+syn keyword qClass QStyleOptionTabBarBase
+syn keyword qClass QStyleOptionTabBarBaseV2
+syn keyword qClass QStyleOptionTabV2
+syn keyword qClass QStyleOptionTabV3
+syn keyword qClass QStyleOptionTabWidgetFrame
+syn keyword qClass QStyleOptionTabWidgetFrameV2
+syn keyword qClass QStyleOptionTitleBar
+syn keyword qClass QStyleOptionToolBar
+syn keyword qClass QStyleOptionToolBox
+syn keyword qClass QStyleOptionToolBoxV2
+syn keyword qClass QStyleOptionToolButton
+syn keyword qClass QStyleOptionViewItem
+syn keyword qClass QStyleOptionViewItemV2
+syn keyword qClass QStyleOptionViewItemV3
+syn keyword qClass QStyleOptionViewItemV4
+syn keyword qClass QStylePainter
+syn keyword qClass QStylePlugin
+syn keyword qClass QSupportedWritingSystems
+syn keyword qClass QSvgGenerator
+syn keyword qClass QSvgRenderer
+syn keyword qClass QSvgWidget
+syn keyword qClass QSwipeGesture
+syn keyword qClass QSymbianEvent
+syn keyword qClass QSymbianGraphicsSystemHelper
+syn keyword qClass QSyntaxHighlighter
+syn keyword qClass QSysInfo
+syn keyword qClass QSystemLocale
+syn keyword qClass QSystemSemaphore
+syn keyword qClass QSystemTrayIcon
+syn keyword qClass QTabBar
+syn keyword qClass QTabletEvent
+syn keyword qClass QTableView
+syn keyword qClass QTableWidget
+syn keyword qClass QTableWidgetItem
+syn keyword qClass QTableWidgetSelectionRange
+syn keyword qClass QTabWidget
+syn keyword qClass QTapAndHoldGesture
+syn keyword qClass QTapGesture
+syn keyword qClass QTcpServer
+syn keyword qClass QTcpSocket
+syn keyword qClass QTemporaryFile
+syn keyword qClass QTestEventList
+syn keyword qClass QTextBlock
+syn keyword qClass QTextBlockFormat
+syn keyword qClass QTextBlockGroup
+syn keyword qClass QTextBlockUserData
+syn keyword qClass QTextBoundaryFinder
+syn keyword qClass QTextBrowser
+syn keyword qClass QTextCharFormat
+syn keyword qClass QTextCodec
+syn keyword qClass QTextCodecPlugin
+syn keyword qClass QTextCursor
+syn keyword qClass QTextDecoder
+syn keyword qClass QTextDocument
+syn keyword qClass QTextDocumentFragment
+syn keyword qClass QTextDocumentWriter
+syn keyword qClass QTextEdit
+syn keyword qClass QTextEncoder
+syn keyword qClass QTextFormat
+syn keyword qClass QTextFragment
+syn keyword qClass QTextFrame
+syn keyword qClass QTextFrameFormat
+syn keyword qClass QTextImageFormat
+syn keyword qClass QTextInlineObject
+syn keyword qClass QTextItem
+syn keyword qClass QTextLayout
+syn keyword qClass QTextLength
+syn keyword qClass QTextLine
+syn keyword qClass QTextList
+syn keyword qClass QTextListFormat
+syn keyword qClass QTextObject
+syn keyword qClass QTextObjectInterface
+syn keyword qClass QTextOption
+syn keyword qClass QTextStream
+syn keyword qClass QTextTable
+syn keyword qClass QTextTableCell
+syn keyword qClass QTextTableCellFormat
+syn keyword qClass QTextTableFormat
+syn keyword qClass QThread
+syn keyword qClass QThreadPool
+syn keyword qClass QThreadStorage
+syn keyword qClass QTileRules
+syn keyword qClass QTime
+syn keyword qClass QTimeEdit
+syn keyword qClass QTimeLine
+syn keyword qClass QTimer
+syn keyword qClass QTimerEvent
+syn keyword qClass QToolBar
+syn keyword qClass QToolBox
+syn keyword qClass QToolButton
+syn keyword qClass QToolTip
+syn keyword qClass QTouchEvent
+syn keyword qClass QTransform
+syn keyword qClass QTranslator
+syn keyword qClass QTreeView
+syn keyword qClass QTreeWidget
+syn keyword qClass QTreeWidgetItem
+syn keyword qClass QTreeWidgetItemIterator
+syn keyword qClass QUdpSocket
+syn keyword qClass QUiLoader
+syn keyword qClass QUndoCommand
+syn keyword qClass QUndoGroup
+syn keyword qClass QUndoStack
+syn keyword qClass QUndoView
+syn keyword qClass UnhandledException (QtConcurrent)
+syn keyword qClass QUrl
+syn keyword qClass QUrlInfo
+syn keyword qClass QUuid
+syn keyword qClass QValidator
+syn keyword qClass QVariant
+syn keyword qClass QVariantAnimation
+syn keyword qClass QVarLengthArray
+syn keyword qClass QVBoxLayout
+syn keyword qClass QVector
+syn keyword qClass QVector2D
+syn keyword qClass QVector3D
+syn keyword qClass QVector4D
+syn keyword qClass QVectorIterator
+syn keyword qClass QVideoFrame
+syn keyword qClass VideoPlayer (Phonon)
+syn keyword qClass QVideoSurfaceFormat
+syn keyword qClass VideoWidget (Phonon)
+syn keyword qClass VideoWidgetInterface44 (Phonon)
+syn keyword qClass VolumeSlider (Phonon)
+syn keyword qClass QWaitCondition
+syn keyword qClass QWeakPointer
+syn keyword qClass QWebDatabase
+syn keyword qClass QWebElement
+syn keyword qClass QWebElementCollection
+syn keyword qClass QWebFrame
+syn keyword qClass QWebHistory
+syn keyword qClass QWebHistoryInterface
+syn keyword qClass QWebHistoryItem
+syn keyword qClass QWebHitTestResult
+syn keyword qClass QWebInspector
+syn keyword qClass QWebPage
+syn keyword qClass QWebPluginFactory
+syn keyword qClass QWebSecurityOrigin
+syn keyword qClass QWebSettings
+syn keyword qClass QWebView
+syn keyword qClass QWhatsThis
+syn keyword qClass QWhatsThisClickedEvent
+syn keyword qClass QWheelEvent
+syn keyword qClass QWidget
+syn keyword qClass QWidgetAction
+syn keyword qClass QWidgetItem
+syn keyword qClass QWindowsMime
+syn keyword qClass QWindowsStyle
+syn keyword qClass QWindowStateChangeEvent
+syn keyword qClass QWindowsVistaStyle
+syn keyword qClass QWindowsXPStyle
+syn keyword qClass QWizard
+syn keyword qClass QWizardPage
+syn keyword qClass QWriteLocker
+syn keyword qClass QWSCalibratedMouseHandler
+syn keyword qClass QWSClient
+syn keyword qClass QWSEmbedWidget
+syn keyword qClass QWSEvent
+syn keyword qClass QWSGLWindowSurface
+syn keyword qClass QWSInputMethod
+syn keyword qClass QWSKeyboardHandler
+syn keyword qClass QWSMouseHandler
+syn keyword qClass QWSPointerCalibrationData
+syn keyword qClass QWSScreenSaver
+syn keyword qClass QWSServer
+syn keyword qClass QWSWindow
+syn keyword qClass QX11EmbedContainer
+syn keyword qClass QX11EmbedWidget
+syn keyword qClass QX11Info
+syn keyword qClass QXmlAttributes
+syn keyword qClass QXmlContentHandler
+syn keyword qClass QXmlDeclHandler
+syn keyword qClass QXmlDefaultHandler
+syn keyword qClass QXmlDTDHandler
+syn keyword qClass QXmlEntityResolver
+syn keyword qClass QXmlErrorHandler
+syn keyword qClass QXmlFormatter
+syn keyword qClass QXmlInputSource
+syn keyword qClass QXmlItem
+syn keyword qClass QXmlLexicalHandler
+syn keyword qClass QXmlLocator
+syn keyword qClass QXmlName
+syn keyword qClass QXmlNamePool
+syn keyword qClass QXmlNamespaceSupport
+syn keyword qClass QXmlNodeModelIndex
+syn keyword qClass QXmlParseException
+syn keyword qClass QXmlQuery
+syn keyword qClass QXmlReader
+syn keyword qClass QXmlResultItems
+syn keyword qClass QXmlSchema
+syn keyword qClass QXmlSchemaValidator
+syn keyword qClass QXmlSerializer
+syn keyword qClass QXmlSimpleReader
+syn keyword qClass QXmlStreamAttribute
+syn keyword qClass QXmlStreamAttributes
+syn keyword qClass QXmlStreamEntityDeclaration
+syn keyword qClass QXmlStreamEntityResolver
+syn keyword qClass QXmlStreamNamespaceDeclaration
+syn keyword qClass QXmlStreamNotationDeclaration
+syn keyword qClass QXmlStreamReader
+syn keyword qClass QXmlStreamWriter 		
+
+syn keyword qType qint8 qint16 qint32 qint64 qlonglong qptrdiff qreal quint8
+syn keyword qType quint16 quint32 quint64 quintptr qulonglong uchar uint ulong
+syn keyword qType ushort
 
 " --- Qt keywords
 "
 syn keyword     cType           SIGNAL SLOT
+syn keyword		Statement		emit signals slots
 
 " --- Qt Macros
 "
@@ -100,4 +855,6 @@ syn keyword     cType           Q_ASSERT Q_CHECK_PTR Q_OBJECT
 
 " highlight Qt classes like bulid-in cpp types
 highlight link qClass Type
+" highlight Qt typedefs like bulid-in cpp types
+highlight link qType Type
 
