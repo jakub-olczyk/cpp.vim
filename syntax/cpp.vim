@@ -847,7 +847,7 @@ syn keyword qType ushort
 " --- Qt keywords
 "
 syn keyword     cType           SIGNAL SLOT
-syn keyword		Statement		emit signals slots
+syn keyword		Statement		emit signals slots foreach
 
 " --- Qt Macros
 "
