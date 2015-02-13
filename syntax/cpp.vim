@@ -853,8 +853,8 @@ syn keyword		Statement		emit signals slots foreach
 "
 syn keyword     cType           Q_ASSERT Q_CHECK_PTR Q_OBJECT
 
-" highlight Qt classes like bulid-in cpp types
+" highlight Qt classes like bulit-in cpp types
 highlight link qClass Type
-" highlight Qt typedefs like bulid-in cpp types
+" highlight Qt typedefs like bulit-in cpp types
 highlight link qType Type
 
